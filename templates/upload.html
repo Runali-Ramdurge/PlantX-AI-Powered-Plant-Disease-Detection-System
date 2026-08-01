@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plant Disease Detection</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='upload_styles.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>🍃 PlantPulse</h2>
+      <p class="subtext">Upload images to identify plant diseases with AI.</p>
+
+      <form
+        id="uploadForm"
+        action="/"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <!-- Upload Button -->
+        <label for="file-upload" class="custom-file-upload">
+          📂 Choose Images
+        </label>
+        <input type="file" name="files" id="file-upload" multiple required />
+
+        <!-- File Names -->
+        <p id="file-names">No files chosen</p>
+
+        <!-- Error -->
+        <p id="error-message"></p>
+
+        <!-- Preview -->
+        <div id="image-preview"></div>
+
+        <br /><br />
+
+        <!-- Submit -->
+        <button type="submit" id="upload-btn">
+          <span id="btn-text">🚀 Upload & Predict</span>
+          <span id="loader">⏳ Processing...</span>
+        </button>
+
+        <p class="tagline">⚡ AI-powered plant disease detection (CNN + NLP)</p>
+      </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='upload_script.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #d4fc79, #96e6a1);
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #2e7d32;
+}
+
+/* Card Design */
+.card {
+  background: white;
+  width: 60%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.plant-img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Healthy vs Disease */
+.healthy {
+  color: green;
+}
+
+.disease {
+  color: red;
+}
+
+/* Confidence Bar */
+.confidence-bar {
+  background: #ddd;
+  height: 12px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(to right, red, orange, green);
+  border-radius: 10px;
+}
+
+/* Info Section */
+.info {
+  text-align: left;
+  margin-top: 15px;
+}
+
+.info h3 {
+  margin-bottom: 5px;
+  color: #2e7d32;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+/* Buttons */
+.back-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #2e7d32;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+/* 🔽 Download Report Button */
+.download-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+
+  background: linear-gradient(135deg, #28a745, #218838);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effect */
+.download-btn:hover {
+  background: linear-gradient(135deg, #218838, #1e7e34);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* Click Effect */
+.download-btn:active {
+  transform: scale(0.97);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+  }
+}

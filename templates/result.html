@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prediction Results</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='result_styles.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>🌿 Plant Disease Detection Results</h1>
+
+      {% for result in results %}
+      <div class="card">
+        <img
+          src="data:image/jpeg;base64,{{ result.image }}"
+          class="plant-img"
+        />
+
+        <h2
+          class="{% if 'healthy' in result.disease.lower() %}healthy{% else %}disease{% endif %}"
+        >
+          {{ result.disease.replace('_', ' ') }}
+        </h2>
+
+        <div class="confidence-bar">
+          <div class="fill" data-width="{{ result.confidence }}"></div>
+        </div>
+
+        <p class="confidence">Confidence: {{ result.confidence }}</p>
+        <p class="time">⏱ {{ result.time_taken }}</p>
+
+        <div class="info">
+          <h3>🦠 Disease Description</h3>
+          <p>{{ result.disease_info }}</p>
+
+          <h3>⚠️ Cause</h3>
+          <p>{{ result.cause }}</p>
+
+          <h3>💊 Treatment</h3>
+          <pre>{{ result.treatment }}</pre>
+        </div>
+      </div>
+      {% endfor %}
+
+      <a href="{{ url_for('download_report') }}" class="download-btn"
+        >Download Report</a
+      >
+      <br /><br />
+      <a href="/" class="back-btn">⬅ Upload More</a>
+    </div>
+  </body>
+</html>
